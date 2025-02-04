@@ -1,4 +1,4 @@
-FROM tomcat:8.0.20-jre8
+FROM tomcat:10.1.34-jdk11-temurin-jammy
 
 RUN apt-get update
 
@@ -10,4 +10,4 @@ COPY . .
 
 RUN mvn clean package
 #Copy the built war to the webapp folder
-RUN cp ./target/TSPBuild.war ./webapps/TSPBuild.war
+RUN cp ./target/*.war ./webapps/TSPBuild.war
